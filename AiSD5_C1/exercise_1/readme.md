@@ -69,3 +69,4 @@ else (nie)
 endif
 @enduml
 ```
+!()[https://github.com/Mateuszpietrusinski/algorithms-1/blob/main/AiSD5_C1/exercise_1/assets/AiSD5_C1_exec_1_diagram.svg]
