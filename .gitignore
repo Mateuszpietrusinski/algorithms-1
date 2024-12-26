@@ -24,3 +24,5 @@
 fp.ini
 fp.cfg
 fp.dsk
+
+*.DS_Store
