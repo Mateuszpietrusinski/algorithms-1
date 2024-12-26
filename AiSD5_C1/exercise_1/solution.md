@@ -39,14 +39,14 @@ Example test cases:
 
 The results of the test cases are as follows:
 1.	Year = 2000
-	•	Expected: "Rok przestepny"
-	•	Result: "Rok przestepny" ✅
+- Expected: "Rok przestepny"
+- Result: "Rok przestepny" ✅
 2.	Year = 1900
-	•	Expected: "Rok nie przestepny"
-	•	Result: "Rok nie przestepny" ✅
+- Expected: "Rok nie przestepny"
+- Result: "Rok nie przestepny" ✅
 3.	Year = 2024
-	•	Expected: "Rok przestepny"
-	•	Result: "Rok przestepny" ✅
+- Expected: "Rok przestepny"
+- Result: "Rok przestepny" ✅
 4.	Year = 2023
-	•	Expected: "Rok nie przestepny"
-	•	Result: "Rok nie przestepny" ✅
+- Expected: "Rok nie przestepny"
+- Result: "Rok nie przestepny" ✅
