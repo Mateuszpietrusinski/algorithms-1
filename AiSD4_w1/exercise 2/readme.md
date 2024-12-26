@@ -9,5 +9,4 @@ begin
  readln
 end.
 ```
-
 Check the reults of the program in console.
