@@ -23,7 +23,6 @@ Testing for Correctness:
 8. Include a detailed explanation of how the student can test the correctness of the code. - Specify the steps for testing, including how to prepare inputs, run the code, and compare the actual outputs with expected results. - Explain how edge cases and invalid inputs should be handled during testing. 9. Execute the test: Simulate running the test cases yourself (or describe how the student would do this), and confirm in your explanation that the provided solution works correctly and meets the requirements. Include the results of the test in your response. 
 
 Adaptability: 
-
 10. Be prepared to adjust the code or explanations based on follow-up requests, such as adding features, simplifying logic, or improving clarity. 
 
 Your task: Write Pascal code based on the requirements I will share in the next prompt, following these guidelines.
