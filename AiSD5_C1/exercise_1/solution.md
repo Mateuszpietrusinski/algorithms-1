@@ -15,14 +15,14 @@ Polish:
 
 ```mermaid
 flowchart TD
-    Start([Start]) --> Input["Wprowadz rok (liczba)"]
-    Input --> Check400{Czy rok jest podzielny przez 400?}
+    Start([Start]) --> Input["Podaj Rok (wartość całkowita)"]
+    Input --> Check400{Jezeli rok mod 400 = 0?}
     Check400 -- Tak --> LeapYear1["Rok przestepny"]
     LeapYear1 --> End1([Stop])
-    Check400 -- Nie --> Check4{Czy rok jest podzielny przez 4?}
+    Check400 -- Nie --> Check4{Jezeli rok mod 4 = 0?}
     Check4 -- Nie --> NotLeapYear1["Rok nieprzestepny"]
     NotLeapYear1 --> End2([Stop])
-    Check4 -- Tak --> Check100{Czy rok jest podzielny przez 100?}
+    Check4 -- Tak --> Check100{Jezeli rok mod 100 <> 0?}
     Check100 -- Tak --> NotLeapYear2["Rok nieprzestepny"]
     NotLeapYear2 --> End3([Stop])
     Check100 -- Nie --> LeapYear2["Rok przestepny"]
