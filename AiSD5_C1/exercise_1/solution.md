@@ -3,38 +3,15 @@
 ## Steps
 
 Polish:
-Krok 1: Podaj Rok (wartość całkowita).
-Krok 2: Jezeli rok mod 400 = 0 to pisz 'Rok przestepny'. Stop
-Krok 3: Jezeli rok mod 4 = 0 to idz do krok 5.
-Krok 4: Pisz 'Rok nieprzestępny'. Stop
-Krok 5: Jezeli rok mod 100 <> 0 to pisz: 'Rok przstepny'. Stop
-Krok 6: Pisz 'Rok nieprzestepny'.
+1. Podaj Rok (wartość całkowita).
+2. Jezeli rok mod 400 = 0 to pisz 'Rok przestepny'. Stop
+3. Jezeli rok mod 4 = 0 to idz do krok 5.
+4. Pisz 'Rok nieprzestępny'. Stop
+5. Jezeli rok mod 100 <> 0 to pisz: 'Rok przstepny'. Stop
+6. Pisz 'Rok nieprzestepny'.
 
 
-## Diagram code
-```plantUML
-@startuml
-start
-:Wprowadz rok (liczba);
-if (Czy rok jest podzielny 400?) then (tak)
-  :Rok przestepny;
-  stop
-else (nie)
-  if (Czy rok jest podzielny przez 4?) then (tak)
-    if (Czy rok jest podzielny przez 100?) then (tak)
-      :Rok nieprzestepny;
-      stop
-    else (nie)
-      :Rok przestepny;
-      stop
-    endif
-  else (nie)
-    :Rok nieprzestepny;
-    stop
-  endif
-endif
-@enduml
-```
+## Diagram 
 
 ```mermaid
 flowchart TD
@@ -51,10 +28,6 @@ flowchart TD
     Check100 -- Nie --> LeapYear2["Rok przestepny"]
     LeapYear2 --> End4([Stop])
 ```
-
-## Diagram Visualization
-![flowchart diagram](https://github.com/Mateuszpietrusinski/algorithms-1/blob/main/AiSD5_C1/exercise_1/assets/AiSD5_C1_exec_1_diagram.svg)
-
 ## Tests
 
 Example test cases:
