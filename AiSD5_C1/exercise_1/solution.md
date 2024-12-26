@@ -1,6 +1,6 @@
 # Solution:
 
-## Steps
+## Steps list
 
 Polish:
 1. Podaj Rok (wartość całkowita).
