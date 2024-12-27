@@ -22,7 +22,7 @@ correctness of the algorithm through the test.
 
 ---
 
-# Solution for Taks 2
+# Task 2: Solution 
 
 ## Algorithm math:
 
