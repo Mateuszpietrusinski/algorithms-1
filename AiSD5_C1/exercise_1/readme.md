@@ -1,27 +1,3 @@
-# Task 1: Checking the Leap Year Condition
-
-> Definition
->> A leap year is a year that meets the following conditions:
->> * It is divisible by 4 and not divisible by 100,  
->>  **or**  
->> * It is divisible by 400.
-
-1. Describe the algorithm using a step-by-step list.
-2. Draw a block diagram for checking the condition for leap year.
-* Draw a block diagram for checking the condition whether the given year is leap year.
-* The input parameter is an integer specifying the year number.
-* The result of the algorithm is whether the given year is leap year or not.
-
-> **Warning:**
-> **In the flowchart, use arithmetic expressions and the mod function to calculate the remainder of the division.**
-
-3. Perform an algorithm validity test
-*  Conduct an analysis of the issue
-*  Develop test scenarios and select representative values of years for which you will check the correctness of the algorithm through the test.
-*  Perform the test for the selected test values
-
-
----
 # Task 1: Solution
 
 ## Steps list
