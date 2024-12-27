@@ -2,7 +2,7 @@
 
 ## Algorithm math:
 
-Integer: 258
+Integer: 258 <br>
                     // S = 0 // S - Suma, L - Liczba
 258 mod 10 + 0 = 8  // S = L mod 10 + S
 258 div 10 = 25     // L = L div 10
@@ -15,7 +15,7 @@ Integer: 258
 
 ## Flowchart diagram
 
-```mermind
+```mermaid
 flowchart TD
     Start([Start]) --> Input@{ shape: lean-r, label: "Czytaj: liczba" }
     Input --> InputAbs["Liczba = abs(liczba) - Wartosć absloutna z liczby"]
