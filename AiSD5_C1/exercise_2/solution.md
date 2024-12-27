@@ -23,7 +23,7 @@ Integer: 258
 ```mermaid
 flowchart TD
     Start([Start]) --> Input@{ shape: lean-r, label: "Czytaj: liczba" }
-    Input --> InputAbs["Liczba = abs(liczba) - Wartosć absloutna z liczby"]
+    Input --> InputAbs["Liczba = abs(liczba) - Wartosć absolutna z liczby"]
     InputAbs --> Suma0["Suma = 0"]
     Suma0 --> SumaMod["Suma = Suma + (Liczba mod 10)"]
     SumaMod --> SumaLiczba["Liczba = Liczba div 10"]
