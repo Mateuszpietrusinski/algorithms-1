@@ -1,10 +1,10 @@
 # Task 1: Checking the Leap Year Condition
 
-## Definition
-A leap year is a year that meets the following conditions:
-* It is divisible by 4 and not divisible by 100,  
-  **or**  
-* It is divisible by 400.
+> Definition
+>> A leap year is a year that meets the following conditions:
+>> * It is divisible by 4 and not divisible by 100,  
+>>  **or**  
+>> * It is divisible by 400.
 
 1. Describe the algorithm using a step-by-step list.
 2. Draw a block diagram for checking the condition for leap year.
