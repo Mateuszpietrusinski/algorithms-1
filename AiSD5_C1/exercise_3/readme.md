@@ -59,7 +59,7 @@ Algorytm odpowiada za monitorowanie i zapisywanie danych o zużyciu energii elek
 
 ### 2. Scenariusze i przykładowe wartości
 
-#### Test 1: Działanie dla jednego dnia
+#### Scenariusz 1: Działanie dla jednego dnia
 ##### Wejście:
 ```json
 {
@@ -150,7 +150,7 @@ Zgodnie z algorytmem:
 ---
 
 
-#### Test 2: Zakończenie działania po 365 dniach
+#### Scenariusz 2: Zakończenie działania po 365 dniach
 ##### Wejście:
 ```json
 {
