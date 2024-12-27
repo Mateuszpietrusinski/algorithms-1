@@ -51,7 +51,7 @@ The results of the test cases are as follows:
 * Suma = 2 ✅
 
 3. Integer: 2137
-* Suma = 13
+* Suma = 13 ✅
 
 4. Integer: -6
 * Suma: 6 wartość absolutna ✅
