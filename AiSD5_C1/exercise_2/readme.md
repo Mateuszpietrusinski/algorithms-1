@@ -1,7 +1,5 @@
 # Task 2: Calculating the sum of digits of an integer
 
----
-
 1. Draw a block diagram of the algorithm for calculating the sum of digits of an integer
 * Draw a block diagram of the algorithm for calculating the sum of digits of an integer.
 * The input parameter is an integer.

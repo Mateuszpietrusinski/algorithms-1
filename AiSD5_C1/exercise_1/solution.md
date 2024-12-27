@@ -31,22 +31,25 @@ flowchart TD
 ## Tests
 
 Example test cases:
-     - Year = 2000 (divisible by 400, should be a leap year)
-     - Year = 1900 (divisible by 100 but not 400, should not be a leap year)
-     - Year = 2024 (divisible by 4 and not 100, should be a leap year)
-     - Year = 2023 (not divisible by 4, should not be a leap year)
+* Year = 2000 (divisible by 400, should be a leap year)
+* Year = 1900 (divisible by 100 but not 400, should not be a leap year)
+* Year = 2024 (divisible by 4 and not 100, should be a leap year)
+* Year = 2023 (not divisible by 4, should not be a leap year)
 
 
 The results of the test cases are as follows:
 1.	Year = 2000
-- Expected: "Rok przestepny"
-- Result: "Rok przestepny" ✅
+* Expected: "Rok przestepny"
+* Result: "Rok przestepny" ✅
+
 2.	Year = 1900
-- Expected: "Rok nie przestepny"
-- Result: "Rok nie przestepny" ✅
+* Expected: "Rok nie przestepny"
+* Result: "Rok nie przestepny" ✅
+
 3.	Year = 2024
-- Expected: "Rok przestepny"
-- Result: "Rok przestepny" ✅
+* Expected: "Rok przestepny"
+* Result: "Rok przestepny" ✅
+
 4.	Year = 2023
-- Expected: "Rok nie przestepny"
-- Result: "Rok nie przestepny" ✅
+* Expected: "Rok nie przestepny"
+* Result: "Rok nie przestepny" ✅
