@@ -2,15 +2,20 @@
 
 ## Algorithm math:
 
-Integer: 258 <br>
-                    // S = 0 // S - Suma, L - Liczba
+Integer: 258
+
+// S = 0 // S - Suma, L - Liczba
+
 258 mod 10 + 0 = 8  // S = L mod 10 + S
+
 258 div 10 = 25     // L = L div 10
 
 25 mod 10 + 8 = 5   // S = L mod 10 + S
+
 25 div 10 = 25      // L = L div 10
 
 2 mod 10 + 13 = 2   // S = L mod 10 + S
+
 2 div 10 = 0        // L = L div 10
 
 ## Flowchart diagram
