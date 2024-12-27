@@ -18,7 +18,7 @@ Integer: 258
 
 2 div 10 = 0        // L = L div 10
 
-## Flowchart diagram
+## Diagram
 
 ```mermaid
 flowchart TD
