@@ -18,7 +18,7 @@ flowchart TD
     turn90RightHalf1 --> goEndStepsHalf1["Idz (6 / 0.75m) kroków do przodu"]
     goEndStepsHalf1 --> turn90LeftHalf1Two["Wykonaj obrót w lewo -90°"]
     turn90LeftHalf1Two --> goTwoStepsHalf1["Idz 2 kroki do przodu"] 
-    goTwoStepsHalf1 -> Stop([Stop])
+    goTwoStepsHalf1 --> Stop([Stop])
 
     turn90RightHalf2 --> goBottomStepsHalf2["Idz (Y / 0.75m) kroków do przodu"]
     goBottomStepsHalf2 --> turn90LeftHalf2["Wykonaj obrót w lewo -90°"]
