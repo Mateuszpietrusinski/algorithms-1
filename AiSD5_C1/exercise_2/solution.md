@@ -1,4 +1,4 @@
-### Solution for Taks 2
+# Solution for Taks 2
 
 ## Algorithm math:
 
