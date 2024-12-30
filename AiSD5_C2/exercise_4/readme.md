@@ -77,3 +77,22 @@ ActivePower := (Sin(Time * PI / 180) + 1) * INSTALLED_POWER / 2;
 
 ###### Rezultat:
 Wartości mocy zmieniają się w zakresie 0-3 kW według funkcji sinusoidalnej, co potwierdza poprawność implementacji.
+
+## Jakie problemy występują przy testowaniu tego programu?
+- Trudno jest przetestować zachowanie programu dla pełnego okresu 365 dni
+- Trudno jest ręcznie zweryfikować poprawność sumowania energii w długim okresie
+- Symulowana funkcja sin(t) może nie odzwierciedlać rzeczywistych wzorców zużycia energii
+- Trudno jest zasymulować wszystkie możliwe scenariusze poboru mocy
+
+## Jakie działania należy podjąć przy testowaniu, jeżeli program czyta dane z interfejsu, który jest niedostępny?
+
+Wstrzykiwanie zależności (dependency injection):
+- Modyfikacja architektury programu (Hexagonal), aby umożliwić łatwe podstawienie mocka zamiast rzeczywistego interfejsu
+- Stworzenie interfejsu abstrakcyjnego dla odczytu danych
+- Implementacja różnych wersji tego interfejsu (rzeczywistej i testowej)
+
+
+
+
+
+
