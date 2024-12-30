@@ -1,4 +1,4 @@
-# Task 1: Rozwiązania
+# Task 4: Rozwiązania
 
 ## Linki do plików z rozwiązanimi
 * [Pascal](./Pascal/main.pas)
