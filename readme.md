@@ -29,9 +29,9 @@ Your task: Write Pascal code based on the requirements I will share in the next 
 ```
 
 ---
-Prompt for readme template
+Template for test scenarios and summary
 ```
-# Task 1: Rozwiazania
+# Task X: Rozwiazania
 
 ## Linki do plików z rozwiązanimi
 * [Pascal](./Pascal/main.pas)
