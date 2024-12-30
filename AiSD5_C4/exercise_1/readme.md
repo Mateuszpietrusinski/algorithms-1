@@ -3,7 +3,7 @@
 ## Pascal
 ## Analiza ograniczeń silni dla typu Int64 w Pascalu
 
-## 1. Największa wartość argumentu dla poprawnego obliczenia silni
+### 1. Największa wartość argumentu dla poprawnego obliczenia silni
 
 Największa wartość argumentu, dla której można poprawnie obliczyć silnię w typie Int64, to **20**.
 
@@ -43,7 +43,7 @@ begin
 end.
 ```
 
-## 2. Zachowanie programu przy przekroczeniu zakresu Int64
+### 2. Zachowanie programu przy przekroczeniu zakresu Int64
 
 Gdy argument przekracza maksymalną wartość (n > 20), występują następujące konsekwencje:
 
@@ -76,7 +76,7 @@ Gdy argument przekracza maksymalną wartość (n > 20), występują następując
    - Implementacja własnego typu do obsługi większych liczb
    - Zastosowanie logarytmów dla przybliżonych wyników
 
-## Wnioski
+### Wnioski
 
 1. Typ Int64 pozwala na bezpieczne obliczenie silni tylko do n=20
 2. Dla większych wartości należy:
@@ -86,70 +86,44 @@ Gdy argument przekracza maksymalną wartość (n > 20), występują następując
 
 ---
 ## Python
+### Wyjaśnienie zachowania zmiennych w języku Python
 
-## Analiza obliczeń silni w Pythonie
+### Dlaczego możliwe jest obliczenie funkcji silnia dla dużych wartości argumentu?
 
-## 1. Największa wartość argumentu dla poprawnego obliczenia silni
+Python obsługuje liczby całkowite o praktycznie nieograniczonej wielkości dzięki implementacji tzw. "arbitrary-precision arithmetic". Oznacza to, że:
 
-W przeciwieństwie do Pascala, Python nie ma standardowego ograniczenia na wielkość liczb całkowitych. Python automatycznie przechodzi na typ long integer, gdy liczby przekraczają zakres standardowego integera. Teoretycznie jedynym ograniczeniem jest dostępna pamięć komputera.
+1. Python automatycznie zarządza pamięcią dla liczb całkowitych (integers)
+2. Gdy liczba przekracza standardowy rozmiar int, Python automatycznie alokuje więcej pamięci
+3. Nie ma standardowego ograniczenia jak w innych językach (np. w C/C++ gdzie int ma typowo 32 lub 64 bity)
+4. Jedynym praktycznym ograniczeniem jest dostępna pamięć komputera
 
-Jednak w praktyce występują inne ograniczenia:
+W przeciwieństwie do języków takich jak C++ czy Java, gdzie występuje przepełnienie (overflow) przy przekroczeniu maksymalnej wartości typu int, Python dynamicznie dostosowuje ilość pamięci potrzebnej do przechowania dużych liczb.
 
-1. **Ograniczenie rekurencji:**
-   - Domyślny limit rekurencji w Pythonie to 1000
-   - Dla funkcji `silnia_rekurencyjna` to ograniczenie pojawi się przy n ≈ 998
-   - Można to zmienić używając `sys.setrecursionlimit()`
+### Dlaczego mała liczba całkowita zajmuje tak dużą liczbę bajtów?
 
-2. **Ograniczenie pamięci:**
-   - Bardzo duże wartości silni zajmują znaczącą ilość pamięci
-   - Przykładowo, 100000! ma około 456574 cyfr
+Mała liczba całkowita w Pythonie zajmuje stosunkowo dużo pamięci (zwykle 28 bajtów na systemach 64-bitowych) z kilku powodów:
 
-## 2. Zachowanie programu dla dużych wartości
+1. **Overhead obiektowy:**
+   - W Pythonie wszystko jest obiektem, nawet proste liczby
+   - Każdy obiekt zawiera dodatkowe informacje jak:
+     - Licznik referencji (reference count)
+     - Wskaźnik do typu obiektu
+     - Flagi i metadane
 
-Python radzi sobie z dużymi liczbami znacznie lepiej niż Pascal. 
+2. **Struktura PyObject:**
+   - Każda liczba całkowita jest reprezentowana jako struktura PyObject
+   - Zawiera ona:
+     - Nagłówek obiektu (object header)
+     - Wartość liczby
+     - Dodatkowe pola wymagane przez interpreter
 
-## 3. Porównanie z Pascalem
+3. **Optymalizacja dla małych liczb:**
+   - Python stosuje technikę "small integer caching" dla często używanych małych liczb
+   - Liczby z zakresu [-5, 256] są zwykle współdzielone między zmiennymi
+   - To zwiększa podstawowy rozmiar obiektu, ale optymalizuje używanie pamięci w praktyce
 
-1. **Zakres wartości:**
-   - Pascal (Int64): Maksymalnie 20!
-   - Python: Praktycznie nieograniczony (ograniczony tylko pamięcią)
-
-2. **Obsługa przepełnienia:**
-   - Pascal: Zwraca nieprawidłowe wyniki po przekroczeniu zakresu
-   - Python: Automatycznie obsługuje duże liczby
-
-3. **Ograniczenia:**
-   - Pascal: Ograniczenie typu Int64
-   - Python: Ograniczenie rekurencji i pamięci
-
-## 4. Przykładowe wyniki
-
-```python
-# Dla n = 20 (maksymalna wartość Pascala)
-20! = 2432902008176640000
-
-# Dla n = 100
-100! = 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-
-# Liczba cyfr w 100! = 158 cyfr
-```
-
-## 5. Rekomendacje
-
-1. **Dla dużych wartości:**
-   - Używać wersji iteracyjnej zamiast rekurencyjnej
-   - Monitorować zużycie pamięci
-   - Rozważyć pokazywanie tylko części wyniku (pierwsze/ostatnie cyfry)
-
-2. **Optymalizacja:**
-   - Dla bardzo dużych liczb rozważyć użycie bibliotek matematycznych (np. math.factorial)
-   - Implementować postęp obliczeń dla długich operacji
-   - Dodać pomiar czasu wykonania
-
-## Wnioski
-
-1. Python jest znacznie lepiej przystosowany do obliczeń silni niż Pascal
-2. Główne ograniczenia w Pythonie to:
-   - Limit rekurencji (dla metody rekurencyjnej)
-   - Dostępna pamięć (dla bardzo dużych liczb)
-3. Dla praktycznych zastosowań Python może obsłużyć znacznie większe wartości silni niż Pascal
+Ta dodatkowa złożoność jest ceną za elastyczność i wygodę programowania w Pythonie. Dzięki temu otrzymujemy:
+- Automatyczne zarządzanie pamięcią
+- Dynamiczne typowanie
+- Brak ograniczeń na wielkość liczb
+- Łatwiejsze debugowanie i introspection

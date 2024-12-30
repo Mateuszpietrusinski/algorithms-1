@@ -1,68 +1,61 @@
 import sys
-from time import time
-
-def wczytaj_liczbe():
-    while True:
-        try:
-            n = int(input('Podaj nieujemną liczbę do obliczenia silni: '))
-            if n < 0:
-                raise ValueError
-            if n > 998:
-                print('Uwaga: Wartości powyżej 998 mogą przekroczyć limit rekurencji!')
-            return n
-        except ValueError:
-            print('Proszę podać prawidłową liczbę nieujemną!')
 
 def silnia_rekurencyjna(n):
+    """
+    Calculates factorial using recursive approach
+    Args:
+        n (int): Non-negative integer to calculate factorial for
+    Returns:
+        int: Factorial of n
+    """
     if n == 0:
         return 1
     else:
         return n * silnia_rekurencyjna(n - 1)
 
 def silnia_iteracyjna(n):
+    """
+    Calculates factorial using iterative approach
+    Args:
+        n (int): Non-negative integer to calculate factorial for
+    Returns:
+        int: Factorial of n
+    """
     wynik = 1
     for i in range(1, n + 1):
         wynik *= i
-        if i % 100 == 0:  # pokazuj postęp co 100 iteracji
-            print(f'Postęp: obliczono {i}!')
     return wynik
 
-def wyswietl_wyniki(n, iteracyjna, rekurencyjna=None):
-    print(f'\nWyniki dla n = {n}:')
-    print(f'Liczba cyfr w wyniku: {len(str(iteracyjna))}')
+def analyze_factorial(n):
+    """
+    Analyzes factorial calculation for a given number, including memory usage
+    Args:
+        n (int): Number to analyze factorial for
+    """
+    # Calculate factorial (using iterative method for large numbers)
+    S = silnia_iteracyjna(n)
     
-    if n <= 20:  # dla małych liczb pokazuj pełny wynik
-        print(f'Silnia iteracyjnie:   {iteracyjna}')
-        if rekurencyjna:
-            print(f'Silnia rekurencyjnie: {rekurencyjna}')
-    else:  # dla dużych liczb pokazuj tylko pierwsze i ostatnie cyfry
-        start = str(iteracyjna)[:10]
-        end = str(iteracyjna)[-10:]
-        print(f'Pierwsze 10 cyfr wyniku: {start}...')
-        print(f'Ostatnie 10 cyfr wyniku: ...{end}')
+    # Print all required values in a formatted way
+    print("\nWyniki dla silni:")
+    print("-" * 50)
+    print(f"Wartość argumentu funkcji silnia: {n}")
+    print(f"Wartość obliczonej silni: {S}")
+    print(f"Typ zmiennej argumentu: {type(n)}")
+    print(f"Typ zmiennej wartości funkcji silnia: {type(S)}")
+    print(f"Liczba bajtów zmiennej argumentu: {sys.getsizeof(n)}")
+    print(f"Liczba bajtów zmiennej wartości funkcji: {sys.getsizeof(S)}")
+    print("-" * 50)
 
-def kontroler():
-    n = wczytaj_liczbe()
+def main():
+    """
+    Main function to run factorial analysis for specified values
+    """
+    # Test values as specified in the requirements
+    test_values = [2, 20, 50, 100]
     
-    print("\nRozpoczynam obliczenia...")
-    start_time = time()
-    
-    wynik_iteracyjny = silnia_iteracyjna(n)
-    
-    if n <= 998:  # tylko dla wartości nieprzekraczających limitu rekurencji
-        try:
-            wynik_rekurencyjny = silnia_rekurencyjna(n)
-            wyswietl_wyniki(n, wynik_iteracyjny, wynik_rekurencyjny)
-        except RecursionError:
-            print("Przekroczono limit rekurencji dla metody rekurencyjnej!")
-            wyswietl_wyniki(n, wynik_iteracyjny)
-    else:
-        wyswietl_wyniki(n, wynik_iteracyjny)
-    
-    end_time = time()
-    print(f'\nCzas wykonania: {end_time - start_time:.2f} sekund')
+    print("Analiza funkcji silnia dla różnych wartości:")
+    for value in test_values:
+        analyze_factorial(value)
 
 if __name__ == "__main__":
-    print("Program do obliczania silni w Pythonie")
-    print("Uwaga: Python obsługuje dowolnie duże liczby całkowite")
-    kontroler()
+    main()
