@@ -27,3 +27,42 @@ Adaptability:
 
 Your task: Write Pascal code based on the requirements I will share in the next prompt, following these guidelines.
 ```
+
+---
+Prompt for readme template
+```
+# Task 1: Rozwiazania
+
+## Linki do plików z rozwiązanimi
+* [Pascal](./Pascal/main.pas)
+* [Python](./Python/main.py) 
+
+## Test poprawności programu
+Opis
+ 
+### Scenariusze i przykładowe wartości
+
+#### Scenariusz X
+opis scenariusza
+
+##### Dane wejściowe:
+
+```python
+dane wejsciowe
+```
+
+###### Oczekiwane wyniki:
+**text**
+
+###### Rezultat:
+
+Python: 
+```text
+Rezultat
+```
+
+Pascal:
+```text
+Rezultat
+```
+---
