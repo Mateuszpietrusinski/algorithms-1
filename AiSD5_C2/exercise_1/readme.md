@@ -1,8 +1,8 @@
 # Task 1: Rozwiazania
 
 ## Linki do plików z rozwiązanimi
-[Pascal](./Pascal/main.pas)
-[Python](./Python/main.py) 
+* [Pascal](./Pascal/main.pas)
+* [Python](./Python/main.py) 
 
 ## Test poprawności programu
  
