@@ -32,6 +32,7 @@ flowchart TD
 
 ## Linki do plików z rozwiązaniami
 * [Pascal](./Pascal/silnia.pas)
+* [Python](./Python/silnia.py)
 
 ## Test poprawności programu
 Program oblicza silnię dwoma metodami: rekurencyjną i iteracyjną, z wykorzystaniem typu Int64 dla dużych liczb.
