@@ -35,6 +35,7 @@ Pascal:
 Wyniki obliczen:
 Dwa pierwiastki: x1 =  -5.14, x2 =  -0.19
 ```
+---
 
 #### Scenariusz 2
 Poprawnie wyliczony jeden pierwiastek.
@@ -64,6 +65,8 @@ Wyniki obliczen:
 Jeden pierwiastek: x = -1.00
 ```
 
+---
+
 #### Scenariusz 3
 Brak rozwiazań.
 
@@ -91,6 +94,7 @@ Pascal:
 Wyniki obliczen:
 Brak rozwiazan.
 ```
+---
 
 #### Scenariusz 4
 Rownanie liniowe
