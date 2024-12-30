@@ -27,13 +27,13 @@ REACTIVE_POWER_RATIO = 0.1
 ###### Rezultat:
 Pascal:
 ```text
-=== Power Consumption Report ===
-Active Power (Tariff I): 12.45 kWh
-Reactive Power (Tariff I): 1.24 kVArh
-Active Power (Tariff II): 8.32 kWh
-Reactive Power (Tariff II): 0.83 kVArh
-Last Month Maximum Power: 0.00 kW
-Current Maximum Power: 2.87 kW
+=== Raport zużycia energii ===
+Moc Czynna (Taryfa I): 12.45 kWh
+Moc Bierna (Taryfa I):  1.24 kVArh
+Moc Czynna (Taryfa II): 8.32 kWh
+Moc Bierna (Taryfa II): 0.83 kVArh
+Moc maksymalna w ostatnim miesiącu: 0.00 kW
+Moc maksymalna w obecnym miesiącu: 2.87 kW
 ==============================
 ```
 
@@ -52,13 +52,13 @@ Symulacja w godzinach:
 ###### Rezultat:
 Pascal:
 ```text
-=== Power Consumption Report ===
-Active Power (Tariff I): 12.45 kWh
-Reactive Power (Tariff I): 1.24 kVArh
-Active Power (Tariff II): 8.32 kWh
-Reactive Power (Tariff II): 0.83 kVArh
-Last Month Maximum Power: 0.00 kW
-Current Maximum Power: 2.87 kW
+=== Raport zużycia energii ===
+Moc Czynna (Taryfa I): 12.45 kWh
+Moc Bierna (Taryfa I):  1.24 kVArh
+Moc Czynna (Taryfa II): 8.32 kWh
+Moc Bierna (Taryfa II): 0.83 kVArh
+Moc maksymalna w ostatnim miesiącu: 0.00 kW
+Moc maksymalna w obecnym miesiącu: 2.87 kW
 ==============================
 ```
 
