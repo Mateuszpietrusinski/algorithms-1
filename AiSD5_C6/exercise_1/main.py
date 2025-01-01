@@ -6,36 +6,34 @@ from sub_3.python.main import insertion_sort_sentinel
 from sub_4.python.main import selection_sort
 from sub_5.python.main import quick_sort
 
-def generate_random_array(size, min_val, max_val):
-    """
-    # Funkcja generująca losową tablicę liczb
-    
-    Parametry:
-    size (int): Rozmiar tablicy
-    min_val (int): Minimalna wartość
-    max_val (int): Maksymalna wartość
-    
-    Zwraca:
-    list: Wygenerowana tablica losowych liczb
-    """
-    return [random.randint(min_val, max_val) for _ in range(size)]
+# Stała określająca ilość liczb
+C_IleLiczb = 20
 
-def print_sorting_results(original, sorted_array, algorithm_name, stats):
+#--- Tworzenie tablicy losowych wartości
+def TabLos():
+    Tab = []
+    Tab.append(-1)
+    #random.seed(1) # Ustaw, by generować zawsze te same liczby
+    for i in range(0, C_IleLiczb):
+        Tab.append(random.randint(0, 999))
+    return Tab
+
+def print_sorting_results(T1, T2, algorithm_name, stats):
     """
     # Funkcja wyświetlająca wyniki sortowania dla jednego algorytmu
     
     Parametry:
-    original (list): Oryginalna tablica
-    sorted_array (list): Posortowana tablica
+    T1 (list): Tablica przed sortowaniem
+    T2 (list): Tablica po sortowaniu
     algorithm_name (str): Nazwa algorytmu
     stats (tuple): Krotka (liczba_porównań, liczba_zamian)
     """
     print(f"\n{'='*13} {algorithm_name} {'='*13}")
-    print(f"{'Przed':15} {'Po':15}")
-    print("="*30)
+    print("="*35)
     
-    for i in range(len(original)):
-        print(f"{i+1:2d}: {original[i]:4d}     {i+1:2d}: {sorted_array[i]:4d}")
+    # Wyświetlanie elementów tablic od indeksu 1 do C_IleLiczb
+    for i in range(1, C_IleLiczb + 1):
+        print(f'{i:2}: {T1[i]:5} {T2[i]:5}')
     
     comparisons, swaps = stats
     print(f"\nPorównań: {comparisons}")
@@ -45,20 +43,14 @@ def main():
     """
     # Główna funkcja programu
     """
-    # Ustawienie ziarna dla powtarzalności wyników
-    random.seed(42)
-    
-    # Generowanie danych testowych
-    SIZE = 20
-    MIN_VAL = 0
-    MAX_VAL = 999
+    # Generowanie tablicy testowej
     CONST_BEFORE_DATA = [654, 114, 25, 759, 281, 250, 228, 142, 754, 104, 692, 758, 913, 558, 89, 604, 432, 32, 30, 95]
     CONST_AFTER_DATA = [25, 30, 32, 89, 95, 104, 114, 142, 228, 250, 281, 432, 558, 604, 654, 692, 754, 758, 759, 913]
-    test_array = generate_random_array(SIZE, MIN_VAL, MAX_VAL)
+    test_array = TabLos()
     
     # Lista funkcji sortujących
     sorting_functions = {
-        'Bąbelkowe': bubble_sort,
+        'Sortowanie': bubble_sort,
         'Proste wstawianie': insertion_sort,
         'Wstawianie ze strażnikiem': insertion_sort_sentinel,
         'Proste wybieranie': selection_sort,
@@ -70,9 +62,12 @@ def main():
     
     # Wykonanie sortowania każdą metodą
     for name, sort_func in sorting_functions.items():
+        # Kopiowanie tablicy do sortowania
+        array_to_sort = test_array.copy()
+        
         # Sortowanie i pomiar czasu
         start_time = time.time()
-        sorted_arr, comparisons, swaps = sort_func(test_array.copy())
+        sorted_arr, comparisons, swaps = sort_func(array_to_sort)
         end_time = time.time()
         
         # Wyświetlenie wyników
