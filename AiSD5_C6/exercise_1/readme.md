@@ -1,193 +1,99 @@
-Here's the complete Markdown formatting in a more visually appealing way using natural spacing and headers. You can directly copy and paste this into your .md file:
+# 📊 Analiza Porównawcza Algorytmów Sortowania
 
-# 📊 Analiza Algorytmów Sortowania
+## 1. Wprowadzenie
+W analizie porównano pięć różnych algorytmów sortowania, testując je na dwóch zestawach danych:
+- Dane nieuporządkowane (losowe)
+- Dane wstępnie posortowane
 
----
+## 2. Analiza Wyników dla Danych Nieuporządkowanych
 
-## 🔄 Sortowanie Bąbelkowe
-![bubble sort](./assets/bubble_sort_results.png)
-### Dane sortowania
-| Indeks | Przed | Po |
-|:------:|:-----:|:--:|
-| 1 | 654 | 25 |
-| 2 | 114 | 30 |
-| 3 | 25 | 32 |
-| 4 | 759 | 89 |
-| 5 | 281 | 95 |
-| 6 | 250 | 104 |
-| 7 | 228 | 114 |
-| 8 | 142 | 142 |
-| 9 | 754 | 228 |
-| 10 | 104 | 250 |
-| 11 | 692 | 281 |
-| 12 | 758 | 432 |
-| 13 | 913 | 558 |
-| 14 | 558 | 604 |
-| 15 | 89 | 654 |
-| 16 | 604 | 692 |
-| 17 | 432 | 754 |
-| 18 | 32 | 758 |
-| 19 | 30 | 759 |
-| 20 | 95 | 913 |
+### Liczba porównań:
+1. **Sortowanie szybkie**: 63 porównania
+   - Najefektywniejszy algorytm pod względem liczby porównań
+   - Wykorzystuje strategię "dziel i zwyciężaj"
 
-### Statystyki
-| Metryka | Wartość |
-|:--------|:-------:|
-| Porównania | 189 |
-| Zamiany | 110 |
-| Czas | 0.03 ms |
+2. **Proste wstawianie**: 127 porównań
+   - Drugi najlepszy wynik
+   - Dobra wydajność dla małych zbiorów danych
 
----
+3. **Wstawianie ze strażnikiem**: 129 porównań
+   - Podobna wydajność do prostego wstawiania
+   - Niewielki narzut związany z obsługą strażnika
 
-## ⬆️ Proste Wstawianie
-![simple insertion](./assets/simple_insertion_results.png)
-### Dane sortowania
-| Indeks | Przed | Po |
-|:------:|:-----:|:--:|
-| 1 | 654 | 25 |
-| 2 | 114 | 30 |
-| 3 | 25 | 32 |
-| 4 | 759 | 89 |
-| 5 | 281 | 95 |
-| 6 | 250 | 104 |
-| 7 | 228 | 114 |
-| 8 | 142 | 142 |
-| 9 | 754 | 228 |
-| 10 | 104 | 250 |
-| 11 | 692 | 281 |
-| 12 | 758 | 432 |
-| 13 | 913 | 558 |
-| 14 | 558 | 604 |
-| 15 | 89 | 654 |
-| 16 | 604 | 692 |
-| 17 | 432 | 754 |
-| 18 | 32 | 758 |
-| 19 | 30 | 759 |
-| 20 | 95 | 913 |
+4. **Sortowanie bąbelkowe**: 189 porównań
+   - Znacznie więcej porównań niż poprzednie metody
+   - Typowa cecha tego algorytmu
 
-### Statystyki
-| Metryka | Wartość |
-|:--------|:-------:|
-| Porównania | 127 |
-| Zamiany | 127 |
-| Czas | 0.02 ms |
+5. **Proste wybieranie**: 190 porównań
+   - Największa liczba porównań
+   - Zawsze wykonuje pełny przebieg przez tablicę
 
----
+### Liczba zamian:
+1. **Proste wybieranie**: 16 zamian
+   - Najmniejsza liczba zamian
+   - Efektywne pod względem operacji przenoszenia danych
 
-## 🛡️ Wstawianie ze Strażnikiem
-![sentinel insertion](./assets/sentinel_insertion_results.png)
+2. **Sortowanie szybkie**: 20 zamian
+   - Bardzo dobra wydajność
+   - Zoptymalizowane operacje zamiany
 
-### Dane sortowania
-| Indeks | Przed | Po |
-|:------:|:-----:|:--:|
-| 1 | 654 | 25 |
-| 2 | 114 | 30 |
-| 3 | 25 | 32 |
-| 4 | 759 | 89 |
-| 5 | 281 | 95 |
-| 6 | 250 | 104 |
-| 7 | 228 | 114 |
-| 8 | 142 | 142 |
-| 9 | 754 | 228 |
-| 10 | 104 | 250 |
-| 11 | 692 | 281 |
-| 12 | 758 | 432 |
-| 13 | 913 | 558 |
-| 14 | 558 | 604 |
-| 15 | 89 | 654 |
-| 16 | 604 | 692 |
-| 17 | 432 | 754 |
-| 18 | 32 | 758 |
-| 19 | 30 | 759 |
-| 20 | 95 | 913 |
+3. **Sortowanie bąbelkowe**: 110 zamian
+   - Znaczna liczba zamian
+   - Charakterystyczna cecha algorytmu bąbelkowego
 
-### Statystyki
-| Metryka | Wartość |
-|:--------|:-------:|
-| Porównania | 129 |
-| Zamiany | 127 |
-| Czas | 0.02 ms |
+4. **Proste wstawianie i Wstawianie ze strażnikiem**: 127 zamian
+   - Najwięcej operacji zamiany
+   - Wynika z natury algorytmu wstawiania
 
----
+## 3. Analiza Wyników dla Danych Posortowanych
 
-## 🔍 Proste Wybieranie
-![simple selection](./assets/simple_selection_sort_results.png)
+### Kluczowe obserwacje:
+1. **Algorytmy wstawiania i bąbelkowe**:
+   - Tylko 19 porównań
+   - Brak zamian
+   - Optymalna wydajność dla posortowanych danych
 
-### Dane sortowania
-| Indeks | Przed | Po |
-|:------:|:-----:|:--:|
-| 1 | 654 | 25 |
-| 2 | 114 | 30 |
-| 3 | 25 | 32 |
-| 4 | 759 | 89 |
-| 5 | 281 | 95 |
-| 6 | 250 | 104 |
-| 7 | 228 | 114 |
-| 8 | 142 | 142 |
-| 9 | 754 | 228 |
-| 10 | 104 | 250 |
-| 11 | 692 | 281 |
-| 12 | 758 | 432 |
-| 13 | 913 | 558 |
-| 14 | 558 | 604 |
-| 15 | 89 | 654 |
-| 16 | 604 | 692 |
-| 17 | 432 | 754 |
-| 18 | 32 | 758 |
-| 19 | 30 | 759 |
-| 20 | 95 | 913 |
+2. **Sortowanie przez wybieranie i szybkie**:
+   - 190 porównań
+   - Brak zamian
+   - Nie wykorzystują faktu, że dane są już posortowane
 
-### Statystyki
-| Metryka | Wartość |
-|:--------|:-------:|
-| Porównania | 190 |
-| Zamiany | 16 |
-| Czas | 0.02 ms |
+## 4. Wnioski Końcowe
 
----
+### Efektywność algorytmów:
+1. **Sortowanie szybkie** (QuickSort):
+   - Najlepszy wybór dla losowych danych
+   - Najniższa liczba porównań w przypadku danych nieuporządkowanych
+   - Słabsza wydajność dla danych posortowanych
 
-## ⚡ Sortowanie Szybkie
-![quick sort](./assets/quick_sort_results.png)
+2. **Algorytmy wstawiania**:
+   - Bardzo dobre dla małych zbiorów danych
+   - Doskonała wydajność dla danych prawie posortowanych
+   - Strażnik nie wnosi znaczącej poprawy wydajności
 
-### Dane sortowania
-| Indeks | Przed | Po |
-|:------:|:-----:|:--:|
-| 1 | 654 | 25 |
-| 2 | 114 | 30 |
-| 3 | 25 | 32 |
-| 4 | 759 | 89 |
-| 5 | 281 | 95 |
-| 6 | 250 | 104 |
-| 7 | 228 | 114 |
-| 8 | 142 | 142 |
-| 9 | 754 | 228 |
-| 10 | 104 | 250 |
-| 11 | 692 | 281 |
-| 12 | 758 | 432 |
-| 13 | 913 | 558 |
-| 14 | 558 | 604 |
-| 15 | 89 | 654 |
-| 16 | 604 | 692 |
-| 17 | 432 | 754 |
-| 18 | 32 | 758 |
-| 19 | 30 | 759 |
-| 20 | 95 | 913 |
+3. **Sortowanie bąbelkowe**:
+   - Prosta implementacja, ale niska wydajność
+   - Duża liczba zamian dla danych nieuporządkowanych
+   - Efektywne tylko dla danych prawie posortowanych
 
-### Statystyki
-| Metryka | Wartość |
-|:--------|:-------:|
-| Porównania | 63 |
-| Zamiany | 20 |
-| Czas | 0.02 ms |
+4. **Proste wybieranie**:
+   - Stała liczba porównań niezależnie od uporządkowania danych
+   - Najmniejsza liczba zamian dla danych nieuporządkowanych
+   - Nie adaptuje się do stopnia uporządkowania danych
 
----
+### Rekomendacje:
+1. **Dla małych zbiorów danych**:
+   - Proste wstawianie lub wstawianie ze strażnikiem
+   - Prosta implementacja i dobra wydajność
 
-## 📈 Podsumowanie Wydajności
+2. **Dla średnich i dużych zbiorów**:
+   - Sortowanie szybkie (QuickSort)
+   - Najlepsza ogólna wydajność
 
-| Algorytm | Porównania | Zamiany | Czas (ms) |
-|:---------|:----------:|:-------:|:---------:|
-| Sortowanie Bąbelkowe | 189 | 110 | 0.03 |
-| Proste Wstawianie | 127 | 127 | 0.02 |
-| Wstawianie ze Strażnikiem | 129 | 127 | 0.02 |
-| Proste Wybieranie | 190 | 16 | 0.02 |
-| Sortowanie Szybkie | 63 | 20 | 0.02 |
+3. **Dla prawie posortowanych danych**:
+   - Algorytmy wstawiania
+   - Sortowanie bąbelkowe
+
+4. **Gdy liczy się minimalna liczba zamian**:
+   - Sortowanie przez wybieranie
+   - Sortowanie szybkie
