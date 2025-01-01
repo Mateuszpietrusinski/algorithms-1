@@ -54,7 +54,7 @@ def main():
     MAX_VAL = 999
     CONST_BEFORE_DATA = [654, 114, 25, 759, 281, 250, 228, 142, 754, 104, 692, 758, 913, 558, 89, 604, 432, 32, 30, 95]
     CONST_AFTER_DATA = [25, 30, 32, 89, 95, 104, 114, 142, 228, 250, 281, 432, 558, 604, 654, 692, 754, 758, 759, 913]
-    test_array = CONST_AFTER_DATA or generate_random_array(SIZE, MIN_VAL, MAX_VAL)
+    test_array = generate_random_array(SIZE, MIN_VAL, MAX_VAL)
     
     # Lista funkcji sortujących
     sorting_functions = {
