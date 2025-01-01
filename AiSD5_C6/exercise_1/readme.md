@@ -1,7 +1,7 @@
 # 🎯 Analiza Algorytmów Sortowania
 
 ## 📊 Porównanie Wydajności
-![bubble sort](./assets/results.png)
+![bubble sort](./assets/results1.png)
 
 ### Dane Nieuporządkowane
 
