@@ -1,5 +1,14 @@
 # Porównanie metod numerycznych znajdowania miejsc zerowych funkcji f(x) = x³ - x² - x + 2
 
+**Test metody Bisekcji**
+![test results](../exercise_1/test.png)
+
+**Test metody Newtona**
+![test results](../exercise_2/test.png)
+
+**Test metody Eulera**
+![test results](./test.png)
+
 ## 1. Porównanie dla różnych przedziałów początkowych (ε = 0.0001)
 
 ### Test 1: Przedział [-5, 5]
