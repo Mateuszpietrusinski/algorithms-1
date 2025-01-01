@@ -66,6 +66,8 @@ Algorytm został zweryfikowany poprzez:
    - Zachowana jest monotoniczność zbieżności
    - Wyniki są stabilne numerycznie
 
+4. Zewnetrzny kalkulator - AI cloude 3.5 sonnet
+
 ## 3. Przesłanki poprawności algorytmu
 
 1. Zgodność z teoretycznymi właściwościami metod całkowania:
