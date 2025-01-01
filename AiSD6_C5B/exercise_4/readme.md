@@ -1,7 +1,7 @@
 # Analiza porównawcza implementacji metody bisekcji
 
 #### Test metody rekurencyjnej
-![test results](./test.png)
+![test results](./test1.png)
 
 #### Test metody iteracyjnej
 ![test results](../exercise_1/test.png)
