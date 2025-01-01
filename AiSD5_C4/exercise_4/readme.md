@@ -1,7 +1,7 @@
 # Diagram
 ```mermaid
 flowchart TD
-    Start([Start]) --> Init[/Inicjalizacja zmiennych:\nsumaChorychKobiet = 0\nsumaChorychMezczyzn = 0\nsumaZgonow = 0\ndzienMaxZgonow = 1\nmaxZgonow = 0/]
+    Start([Start]) --> Init[/Inicjalizacja zmiennych: <br> sumaChorychKobiet = 0 <br> sumaChorychMezczyzn = 0 <br> sumaZgonow = 0 <br> dzienMaxZgonow = 1 <br> maxZgonow = 0/]
     Init --> ForLoop[Dla dzień = 1 do 31]
     ForLoop --> CalcWomen[Dodaj zachorowania kobiet do sumaChorychKobiet\nDodaj zachorowania mężczyzn do sumaChorychMezczyzn]
     CalcWomen --> CalcDeaths[Oblicz sumę zgonów dla bieżącego dnia\nzgonyDzis = zgony_kobiet + zgony_mezczyzn]
