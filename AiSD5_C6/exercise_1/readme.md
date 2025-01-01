@@ -1,99 +1,105 @@
-# 📊 Analiza Porównawcza Algorytmów Sortowania
+# 🎯 Analiza Algorytmów Sortowania
 
-## 1. Wprowadzenie
-W analizie porównano pięć różnych algorytmów sortowania, testując je na dwóch zestawach danych:
-- Dane nieuporządkowane (losowe)
-- Dane wstępnie posortowane
+## 📊 Porównanie Wydajności
+![bubble sort](./assets/results.png)
 
-## 2. Analiza Wyników dla Danych Nieuporządkowanych
+### Dane Nieuporządkowane
 
-### Liczba porównań:
-1. **Sortowanie szybkie**: 63 porównania
-   - Najefektywniejszy algorytm pod względem liczby porównań
-   - Wykorzystuje strategię "dziel i zwyciężaj"
+| Algorytm | 🔄 Porównania | 🔀 Zamiany | ⚡ Wydajność |
+|:---------|:-------------:|:----------:|:-----------:|
+| Sortowanie szybkie | 63 | 20 | 🌟🌟🌟🌟🌟 |
+| Proste wstawianie | 127 | 127 | 🌟🌟🌟🌟 |
+| Wstawianie ze strażnikiem | 129 | 127 | 🌟🌟🌟🌟 |
+| Sortowanie bąbelkowe | 189 | 110 | 🌟🌟 |
+| Proste wybieranie | 190 | 16 | 🌟🌟🌟 |
 
-2. **Proste wstawianie**: 127 porównań
-   - Drugi najlepszy wynik
-   - Dobra wydajność dla małych zbiorów danych
+### Dane Posortowane
 
-3. **Wstawianie ze strażnikiem**: 129 porównań
-   - Podobna wydajność do prostego wstawiania
-   - Niewielki narzut związany z obsługą strażnika
+| Algorytm | 🔄 Porównania | 🔀 Zamiany | ⚡ Wydajność |
+|:---------|:-------------:|:----------:|:-----------:|
+| Sortowanie bąbelkowe | 19 | 0 | 🌟🌟🌟🌟🌟 |
+| Proste wstawianie | 19 | 0 | 🌟🌟🌟🌟🌟 |
+| Wstawianie ze strażnikiem | 19 | 0 | 🌟🌟🌟🌟🌟 |
+| Proste wybieranie | 190 | 0 | 🌟🌟 |
+| Sortowanie szybkie | 190 | 0 | 🌟🌟 |
 
-4. **Sortowanie bąbelkowe**: 189 porównań
-   - Znacznie więcej porównań niż poprzednie metody
-   - Typowa cecha tego algorytmu
+## 🎯 Najlepsze Zastosowania
 
-5. **Proste wybieranie**: 190 porównań
-   - Największa liczba porównań
-   - Zawsze wykonuje pełny przebieg przez tablicę
+### 🚀 Sortowanie Szybkie (QuickSort)
+```
+Zalety:
+✅ Najlepsza wydajność dla losowych danych
+✅ Najmniej porównań dla nieuporządkowanych danych
+✅ Dobra wydajność pamięciowa
 
-### Liczba zamian:
-1. **Proste wybieranie**: 16 zamian
-   - Najmniejsza liczba zamian
-   - Efektywne pod względem operacji przenoszenia danych
+Wady:
+❌ Słabsza wydajność dla posortowanych danych
+❌ Bardziej skomplikowana implementacja
+```
 
-2. **Sortowanie szybkie**: 20 zamian
-   - Bardzo dobra wydajność
-   - Zoptymalizowane operacje zamiany
+### 📥 Proste Wstawianie
+```
+Zalety:
+✅ Świetne dla małych zbiorów danych
+✅ Doskonałe dla prawie posortowanych danych
+✅ Prosta implementacja
 
-3. **Sortowanie bąbelkowe**: 110 zamian
-   - Znaczna liczba zamian
-   - Charakterystyczna cecha algorytmu bąbelkowego
+Wady:
+❌ Dużo zamian dla nieuporządkowanych danych
+❌ Nieefektywne dla dużych zbiorów
+```
 
-4. **Proste wstawianie i Wstawianie ze strażnikiem**: 127 zamian
-   - Najwięcej operacji zamiany
-   - Wynika z natury algorytmu wstawiania
+### 🛡️ Wstawianie ze Strażnikiem
+```
+Zalety:
+✅ Podobne do prostego wstawiania
+✅ Mniej porównań w pętli wewnętrznej
+✅ Dobre dla małych zbiorów
 
-## 3. Analiza Wyników dla Danych Posortowanych
+Wady:
+❌ Wymaga dodatkowej pamięci
+❌ Bardziej skomplikowana implementacja
+```
 
-### Kluczowe obserwacje:
-1. **Algorytmy wstawiania i bąbelkowe**:
-   - Tylko 19 porównań
-   - Brak zamian
-   - Optymalna wydajność dla posortowanych danych
+### 🔄 Sortowanie Bąbelkowe
+```
+Zalety:
+✅ Najprostsza implementacja
+✅ Dobre dla prawie posortowanych danych
+✅ Łatwe do zrozumienia
 
-2. **Sortowanie przez wybieranie i szybkie**:
-   - 190 porównań
-   - Brak zamian
-   - Nie wykorzystują faktu, że dane są już posortowane
+Wady:
+❌ Dużo porównań i zamian
+❌ Nieefektywne dla dużych zbiorów
+```
 
-## 4. Wnioski Końcowe
+### 🎯 Proste Wybieranie
+```
+Zalety:
+✅ Najmniej zamian elementów
+✅ Przewidywalna liczba operacji
+✅ Stabilne działanie
 
-### Efektywność algorytmów:
-1. **Sortowanie szybkie** (QuickSort):
-   - Najlepszy wybór dla losowych danych
-   - Najniższa liczba porównań w przypadku danych nieuporządkowanych
-   - Słabsza wydajność dla danych posortowanych
+Wady:
+❌ Stała duża liczba porównań
+❌ Nie adaptuje się do danych
+```
 
-2. **Algorytmy wstawiania**:
-   - Bardzo dobre dla małych zbiorów danych
-   - Doskonała wydajność dla danych prawie posortowanych
-   - Strażnik nie wnosi znaczącej poprawy wydajności
+## 📈 Rekomendacje Użycia
 
-3. **Sortowanie bąbelkowe**:
-   - Prosta implementacja, ale niska wydajność
-   - Duża liczba zamian dla danych nieuporządkowanych
-   - Efektywne tylko dla danych prawie posortowanych
+| Scenariusz | Rekomendowany Algorytm | Dlaczego? |
+|:-----------|:----------------------:|:----------|
+| 🔸 Małe zbiory danych (<50 elementów) | Proste wstawianie | Prosta implementacja, dobra wydajność |
+| 🔸 Duże zbiory danych | Sortowanie szybkie | Najlepsza ogólna wydajność |
+| 🔸 Prawie posortowane dane | Wstawianie/Bąbelkowe | Wykorzystują wstępne uporządkowanie |
+| 🔸 Ograniczona pamięć | Proste wybieranie | Minimalna liczba zamian |
+| 🔸 Stabilne sortowanie | Proste wstawianie | Zachowuje kolejność równych elementów |
 
-4. **Proste wybieranie**:
-   - Stała liczba porównań niezależnie od uporządkowania danych
-   - Najmniejsza liczba zamian dla danych nieuporządkowanych
-   - Nie adaptuje się do stopnia uporządkowania danych
+## 🏆 Podsumowanie
 
-### Rekomendacje:
-1. **Dla małych zbiorów danych**:
-   - Proste wstawianie lub wstawianie ze strażnikiem
-   - Prosta implementacja i dobra wydajność
-
-2. **Dla średnich i dużych zbiorów**:
-   - Sortowanie szybkie (QuickSort)
-   - Najlepsza ogólna wydajność
-
-3. **Dla prawie posortowanych danych**:
-   - Algorytmy wstawiania
-   - Sortowanie bąbelkowe
-
-4. **Gdy liczy się minimalna liczba zamian**:
-   - Sortowanie przez wybieranie
-   - Sortowanie szybkie
+### Ranking Ogólnej Wydajności:
+1. 🥇 **Sortowanie szybkie** - Najlepsze dla ogólnych zastosowań
+2. 🥈 **Proste wstawianie** - Dobre dla małych zbiorów
+3. 🥉 **Wstawianie ze strażnikiem** - Podobne do prostego wstawiania
+4. 4️⃣ **Proste wybieranie** - Dobre gdy liczy się liczba zamian
+5. 5️⃣ **Sortowanie bąbelkowe** - Najlepsze do celów edukacyjnych
