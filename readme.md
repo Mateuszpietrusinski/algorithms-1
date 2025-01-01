@@ -26,6 +26,8 @@ Adaptability:
 10. Be prepared to adjust the code or explanations based on follow-up requests, such as adding features, simplifying logic, or improving clarity. 
 
 Your task: Write Pascal code based on the requirements I will share in the next prompt, following these guidelines.
+
+Comments and output for the user write in Polish, keep the code in English.
 ```
 
 ### Python
@@ -55,6 +57,8 @@ Adaptability:
 10. Be prepared to adjust the code or explanations based on follow-up requests, such as adding features, simplifying logic, or improving clarity. 
 
 Your task: Write Python code based on the requirements I will share in the next prompt, following these guidelines.
+
+Comments and output for the user write in Polish, keep the code in English.
 ```
 ---
 Template for test scenarios and summary
