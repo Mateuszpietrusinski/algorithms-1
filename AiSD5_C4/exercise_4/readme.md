@@ -3,15 +3,15 @@
 flowchart TD
     Start([Start]) --> Init[/Inicjalizacja zmiennych: <br> sumaChorychKobiet = 0 <br> sumaChorychMezczyzn = 0 <br> sumaZgonow = 0 <br> dzienMaxZgonow = 1 <br> maxZgonow = 0/]
     Init --> ForLoop[Dla dzień = 1 do 31]
-    ForLoop --> CalcWomen[Dodaj zachorowania kobiet do sumaChorychKobiet\nDodaj zachorowania mężczyzn do sumaChorychMezczyzn]
-    CalcWomen --> CalcDeaths[Oblicz sumę zgonów dla bieżącego dnia\nzgonyDzis = zgony_kobiet + zgony_mezczyzn]
+    ForLoop --> CalcWomen[Dodaj zachorowania kobiet do sumaChorychKobiet <br> Dodaj zachorowania mężczyzn do sumaChorychMezczyzn]
+    CalcWomen --> CalcDeaths[Oblicz sumę zgonów dla bieżącego dnia <br> zgonyDzis = zgony_kobiet + zgony_mezczyzn]
     CalcDeaths --> CheckMax{zgonyDzis > maxZgonow?}
-    CheckMax -->|Tak| UpdateMax[Aktualizuj maxZgonow\nAktualizuj dzienMaxZgonow]
+    CheckMax -->|Tak| UpdateMax[Aktualizuj maxZgonow <br> Aktualizuj dzienMaxZgonow]
     CheckMax -->|Nie| Continue
     UpdateMax --> Continue
     Continue --> CheckDayEnd{Koniec dni?}
     CheckDayEnd -->|Nie| ForLoop
-    CheckDayEnd -->|Tak| CalcStats[Oblicz statystyki końcowe:\n1. Suma wszystkich zachorowań = sumaChorychKobiet + sumaChorychMezczyzn\n2. Średnia dzienna zachorowań = Suma wszystkich / 31\n3. Dzień z największą liczbą zgonów = dzienMaxZgonow]
+    CheckDayEnd -->|Tak| CalcStats[Oblicz statystyki końcowe: <br> 1. Suma wszystkich zachorowań = sumaChorychKobiet + sumaChorychMezczyzn <br> 2. Średnia dzienna zachorowań = Suma wszystkich / 31 <br> 3. Dzień z największą liczbą zgonów = dzienMaxZgonow]
     CalcStats --> Display[/Wyświetl wyniki/]
     Display --> End([Koniec])
 
