@@ -1,5 +1,5 @@
 # Diagramy
-
+`h` - reprezentuje szerokość pojedynczego podprzedziału
 ## Metoda Prostokątów
 ```mermaid
 graph TD
