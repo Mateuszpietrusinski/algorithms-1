@@ -50,7 +50,7 @@ def main():
                 print("Wartości funkcji na krańcach przedziału:")
                 print(f"f({a}) = {f(a):.6f}")
                 print(f"f({b}) = {f(b):.6f}")
-                print("\nPrószę podać inny przedział.")
+                print("\nProszę podać inny przedział.")
                 continue
                 
             precision = float(input("Podaj dokładność (np. 0.0001): "))
