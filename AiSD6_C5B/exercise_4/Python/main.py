@@ -1,4 +1,3 @@
-
 iteration_count = 0;
 def f(x):
     """
