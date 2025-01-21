@@ -29,6 +29,7 @@ def bisection_recursive(a, b, precision):
         return bisection_recursive(c, b, precision)
 
 def main():
+    global iteration_count
     """
     # Główna funkcja programu obsługująca wprowadzanie danych i wyświetlanie wyników
     """
@@ -62,6 +63,7 @@ def main():
             print(f"Znalezione miejsce zerowe: {result:.6f}")
             print(f"Wartość funkcji w znalezionym punkcie: {f(result):.6f}")
             print(f"Liczba wykonanych iteracji: {iteration_count}")
+            iteration_count = 0
             
             # Pytanie o kontynuację
             if input("\nCzy chcesz spróbować ponownie? (t/n): ").lower() != 't':
