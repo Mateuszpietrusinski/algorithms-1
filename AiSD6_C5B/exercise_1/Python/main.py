@@ -1,3 +1,4 @@
+
 def f(x):
     """
     Funkcja do znalezienia miejsca zerowego: f(x) = x³ - x² - x + 2
@@ -21,19 +22,12 @@ def check_interval(a, b):
     return f(a) * f(b) < 0
 
 def bisection_method(a, b, accuracy):
-    """
-    Implementacja metody bisekcji
-    Args:
-        a (float): Początek przedziału
-        b (float): Koniec przedziału
-        accuracy (float): Żądana dokładność
-    Returns:
-        tuple: (przybliżone miejsce zerowe, liczba iteracji)
-    """
+
+    global iterations;
     iterations = 0
-    
-    while abs(b - a) > accuracy:
-        x = (a + b) / 2  # Środek przedziału
+    x = (a + b) / 2  # Środek przedziału
+    while abs(f(x)) > accuracy:
+       
         iterations += 1
         
         if abs(f(x)) <= accuracy:  # Sprawdzamy czy znaleźliśmy wystarczająco dokładne rozwiązanie
@@ -43,8 +37,9 @@ def bisection_method(a, b, accuracy):
             b = x
         else:  # Miejsce zerowe jest w prawej połowie
             a = x
-            
-    return (a + b) / 2, iterations
+
+        x = (a + b) / 2  # Środek przedziału  
+    return x
 
 def get_valid_input():
     """
@@ -85,7 +80,7 @@ def main():
     
     while True:
         a, b, accuracy = get_valid_input()
-        x, iterations = bisection_method(a, b, accuracy)
+        x = bisection_method(a, b, accuracy)
         
         print(f"\nWyniki:")
         print(f"Znalezione miejsce zerowe: {x:.6f}")

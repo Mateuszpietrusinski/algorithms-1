@@ -1,3 +1,5 @@
+
+iteration_count = 0;
 def f(x):
     """
     # Funkcja obliczająca wartość wielomianu x^3 - x^2 - x + 2
@@ -11,26 +13,21 @@ def check_interval(a, b):
     """
     return f(a) * f(b) < 0
 
-def bisection_recursive(a, b, precision, iteration_count=0):
-    """
-    # Rekurencyjna implementacja metody bisekcji
-    # a, b - granice przedziału
-    # precision - zadana dokładność
-    # iteration_count - licznik iteracji
-    """
+def bisection_recursive(a, b, precision):
     # Obliczamy środek przedziału
+    global iteration_count
     c = (a + b) / 2
-    iteration_count += 1
     
     # Sprawdzamy warunek zakończenia (czy przedział jest wystarczająco mały)
-    if abs(b - a) < precision:
-        return c, iteration_count
+    if abs(f(c)) < precision:
+        return c
     
+    iteration_count += 1
     # Sprawdzamy, w której połowie jest miejsce zerowe i rekurencyjnie kontynuujemy
     if f(c) * f(a) < 0:
-        return bisection_recursive(a, c, precision, iteration_count)
+        return bisection_recursive(a, c, precision)
     else:
-        return bisection_recursive(c, b, precision, iteration_count)
+        return bisection_recursive(c, b, precision)
 
 def main():
     """
@@ -59,13 +56,13 @@ def main():
                 continue
                 
             # Obliczanie miejsca zerowego
-            result, iterations = bisection_recursive(a, b, precision)
+            result = bisection_recursive(a, b, precision)
             
             # Wyświetlanie wyników
             print("\nWYNIKI:")
             print(f"Znalezione miejsce zerowe: {result:.6f}")
             print(f"Wartość funkcji w znalezionym punkcie: {f(result):.6f}")
-            print(f"Liczba wykonanych iteracji: {iterations}")
+            print(f"Liczba wykonanych iteracji: {iteration_count}")
             
             # Pytanie o kontynuację
             if input("\nCzy chcesz spróbować ponownie? (t/n): ").lower() != 't':
