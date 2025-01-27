@@ -1,4 +1,4 @@
-def selection_sort(arr):
+def selection_sort(arr, n):
     """
     # Funkcja realizująca sortowanie przez wybieranie
     

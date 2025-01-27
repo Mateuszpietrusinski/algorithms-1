@@ -32,7 +32,7 @@ def print_sorting_results(T1, T2, algorithm_name, stats):
     print("="*35)
     
     # Wyświetlanie elementów tablic od indeksu 1 do C_IleLiczb
-    for i in range(1, C_IleLiczb + 1):
+    for i in range(0, C_IleLiczb + 0):
         print(f'{i:2}: {T1[i]:5} {T2[i]:5}')
     
     comparisons, swaps = stats
@@ -44,13 +44,14 @@ def main():
     # Główna funkcja programu
     """
     # Generowanie tablicy testowej
-    CONST_BEFORE_DATA = [654, 114, 25, 759, 281, 250, 228, 142, 754, 104, 692, 758, 913, 558, 89, 604, 432, 32, 30, 95]
-    CONST_AFTER_DATA = [25, 30, 32, 89, 95, 104, 114, 142, 228, 250, 281, 432, 558, 604, 654, 692, 754, 758, 759, 913]
-    test_array = TabLos()
+    # CONST_BEFORE_DATA = [654, 114, 25, 759, 281, 250, 228, 142, 754, 104, 692, 758, 913, 558, 89, 604, 432, 32, 30, 95]
+    # CONST_AFTER_DATA = [25, 30, 32, 89, 95, 104, 114, 142, 228, 250, 281, 432, 558, 604, 654, 692, 754, 758, 759, 913]
+    test_array = [521, 605, 13, 912, 757, 81, 296, 105, 775, 214, 218, 428, 759, 302, 835, 576, 607, 633, 109, 270]
+    # print(test_array)
     
     # Lista funkcji sortujących
     sorting_functions = {
-        'Sortowanie': bubble_sort,
+        'Sortowanie bąbelkowe': bubble_sort,
         'Proste wstawianie': insertion_sort,
         'Wstawianie ze strażnikiem': insertion_sort_sentinel,
         'Proste wybieranie': selection_sort,
@@ -67,7 +68,7 @@ def main():
         
         # Sortowanie i pomiar czasu
         start_time = time.time()
-        sorted_arr, comparisons, swaps = sort_func(array_to_sort)
+        sorted_arr, comparisons, swaps = sort_func(array_to_sort, len(test_array))
         end_time = time.time()
         
         # Wyświetlenie wyników

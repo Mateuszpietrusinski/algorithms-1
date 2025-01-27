@@ -1,4 +1,4 @@
-def insertion_sort_sentinel(arr):
+def insertion_sort_sentinel(arr, n):
     """
     # Funkcja realizująca sortowanie przez wstawianie ze strażnikiem
     

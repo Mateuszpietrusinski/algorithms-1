@@ -1,48 +1,46 @@
-def insertion_sort(arr):
+def insertion_sort(arr, n):
     """
-    # Funkcja realizująca sortowanie przez wstawianie
+    Funkcja realizująca sortowanie przez wstawianie zgodnie ze schematem blokowym
     
     Parametry:
     arr (list): Lista liczb do posortowania
+    n (int): Długość listy
     
     Zwraca:
     tuple: (posortowana_lista, liczba_porównań, liczba_zamian)
     """
-    # Tworzymy kopię listy, aby nie modyfikować oryginału
+    # Tworzymy kopię listy
     arr = arr.copy()
     
     # Inicjalizacja liczników
-    comparisons = 0  # licznik porównań
-    swaps = 0        # licznik zamian
+    comparisons = 0
+    swaps = 0
     
-    # Przechodzimy przez wszystkie elementy począwszy od drugiego
-    for i in range(1, len(arr)):
-        # Zapamiętujemy aktualny element do wstawienia
-        key = arr[i]
+    # Rozpoczynamy od i=2 zgodnie ze schematem
+    i = 2
+    while i <= n:
+        # Pobieramy element do wstawienia
+        x = arr[i-1]  # i-1 bo indeksujemy od 0
         
-        # Inicjalizujemy indeks poprzedniego elementu
-        j = i - 1
+        # Wstawianie x w odpowiednie miejsce tablicy
+        j = i - 2  # Zaczynamy od elementu przed x
         
-        # Przesuwamy elementy większe od key o jedną pozycję w prawo
-        # dopóki nie znajdziemy właściwego miejsca dla key
+        # Przesuwamy elementy większe od x
         while j >= 0:
-            # Zwiększamy licznik porównań
             comparisons += 1
-            
-            if arr[j] > key:
+            if arr[j] > x:
                 # Przesuwamy element w prawo
                 arr[j + 1] = arr[j]
-                # Zwiększamy licznik zamian
                 swaps += 1
                 j -= 1
             else:
-                # Znaleźliśmy właściwe miejsce - przerywamy pętlę
                 break
-        
-        # Jeśli pozycja wstawienia jest inna niż początkowa,
-        # liczymy to jako jedną operację zamiany
-        if j + 1 != i:
-            arr[j + 1] = key
+                
+        # Wstawiamy x w znalezione miejsce
+        if j + 1 != i - 1:  # Jeśli pozycja się zmieniła
+            arr[j + 1] = x
             swaps += 1
             
+        i += 1
+        
     return arr, comparisons, swaps
